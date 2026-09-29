@@ -1,17 +1,7 @@
 <!-- YoRHa archive -->
-```
-▸ YoRHa // ARCHIVE — SUPERMINIRT
-```
+<p align="center"><img src=".github/yorha-header.svg" width="100%" alt="YoRHa // ARCHIVE — SuperMiniRT · Type: 42 Lausanne common-core project (miniRT) · team (2) · Stack: C · MiniLibX · pthreads · libm · Status: ■ COMPLETE"></p>
 
 A multithreaded CPU ray tracer in C that renders `.rt` scene files with reflections, textures, bump maps and a free-flying camera.
-
-![C](https://img.shields.io/badge/lang-C-4e4b42?style=flat-square) ![MiniLibX](https://img.shields.io/badge/MiniLibX-graphics-dad4bb?style=flat-square)
-
-| UNIT DATA | |
-|---|---|
-| Type | 42 Lausanne common-core project (miniRT) · team (2) |
-| Stack | C · MiniLibX · pthreads · libm |
-| Status | ■ COMPLETE |
 
 ## ▸ Overview
 miniRT is the 42 ray-tracing project: parse a scene description, cast one ray per pixel, and shade the closest hit.
