@@ -1,0 +1,23 @@
+A   0.1 255,255,255
+C   -3,-1,-40 0.12,0.06,1 70
+L   0,-12,4 0.7 255,190,120
+L   0,-12,80 0.55 120,170,255
+pl  0,8,0              0,1,0          230,230,230  0 0.25 0 0 1
+pl  -16,0,0            1,0,0          200,215,255  0 0.85 0 0 0
+pl  16,0,0             -1,0,0         200,215,255  0 0.85 0 0 0
+sp  0,2,22             12             255,255,255  0 0.95 0 0 0
+sp  -4,6,6             4              205,80,60    0 0.2 0 0 0
+cy  -11,8,-10          0,-1,0         3.2            22             255,255,255  0 0 imgs/castle.xpm imgs/wall.xpm 0
+cy  11,8,-10           0,-1,0         3.2            22             255,255,255  0 0 imgs/castle.xpm imgs/wall.xpm 0
+cy  -11,8,16           0,-1,0         3.2            22             255,255,255  0 0 imgs/castle.xpm imgs/wall.xpm 0
+cy  11,8,16            0,-1,0         3.2            22             255,255,255  0 0 imgs/castle.xpm imgs/wall.xpm 0
+cy  -11,8,42           0,-1,0         3.2            22             255,255,255  0 0 imgs/castle.xpm imgs/wall.xpm 0
+cy  11,8,42            0,-1,0         3.2            22             255,255,255  0 0 imgs/castle.xpm imgs/wall.xpm 0
+cy  -11,8,68           0,-1,0         3.2            22             255,255,255  0 0 imgs/castle.xpm imgs/wall.xpm 0
+cy  11,8,68            0,-1,0         3.2            22             255,255,255  0 0 imgs/castle.xpm imgs/wall.xpm 0
+cy  -11,8,94           0,-1,0         3.2            22             255,255,255  0 0 imgs/castle.xpm imgs/wall.xpm 0
+cy  11,8,94            0,-1,0         3.2            22             255,255,255  0 0 imgs/castle.xpm imgs/wall.xpm 0
+cy  -11,8,120          0,-1,0         3.2            22             255,255,255  0 0 imgs/castle.xpm imgs/wall.xpm 0
+cy  11,8,120           0,-1,0         3.2            22             255,255,255  0 0 imgs/castle.xpm imgs/wall.xpm 0
+cy  -11,8,146          0,-1,0         3.2            22             255,255,255  0 0 imgs/castle.xpm imgs/wall.xpm 0
+cy  11,8,146           0,-1,0         3.2            22             255,255,255  0 0 imgs/castle.xpm imgs/wall.xpm 0

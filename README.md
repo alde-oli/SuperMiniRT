@@ -11,14 +11,16 @@ The camera can be moved and rotated live; each move re-launches the render.
 
 ## ▸ Renders
 <p align="center">
-  <img src=".github/renders/MegaMirror.jpg" width="100%" alt="MegaMirror.rt — facing mirror planes reflecting spheres and checkered cylinders recursively">
+  <img src=".github/renders/planets.jpg" width="100%" alt="planets.rt — textured and bump-mapped rocky planet, banded gas giant, cratered moon and a small blue planet over a star field">
 </p>
 <p align="center">
-  <img src=".github/renders/SphereBonus.jpg" width="49%" alt="SphereBonus.rt — bump-mapped yellow sphere, textured sphere, checkerboard sphere">
-  <img src=".github/renders/ComplexBonus.jpg" width="49%" alt="ComplexBonus.rt — textured, bump-mapped and reflective planes, spheres, cylinder and cone under three coloured lights">
+  <img src=".github/renders/mirror_hall.jpg" width="49%" alt="mirror_hall.rt — corridor between two mirrors, stone columns, checker floor and a chrome sphere under warm and cool lights">
+  <img src=".github/renders/sunset_temple.jpg" width="49%" alt="sunset_temple.rt — ring of stone columns on grass at sunset around a chrome orb on a pedestal">
+  <img src=".github/renders/rgb_shadows.jpg" width="49%" alt="rgb_shadows.rt — white sphere, cylinder, cone and chrome ball lit by red, green and blue lights, casting coloured shadows">
+  <img src=".github/renders/MegaMirror.jpg" width="49%" alt="MegaMirror.rt — box of mirrors reflecting spheres and checkered cylinders recursively">
 </p>
 
-<sub>`MegaMirror.rt`, `SphereBonus.rt` and `ComplexBonus.rt` at 1280×720, rendered by this code (Linux build linked against a headless MiniLibX stand-in that dumps the frame). One texture was swapped for another image from `imgs/`.</sub>
+<sub>1280×720, rendered by this code (Linux build linked against a headless MiniLibX stand-in that dumps the frame). Scenes: `scenes/planets.rt`, `mirror_hall.rt`, `sunset_temple.rt`, `rgb_shadows.rt`, `MegaMirror.rt` (one texture swapped for another image from `imgs/`). `imgs/gas_giant.xpm` and `imgs/moon.xpm` are procedurally generated.</sub>
 
 ## ▸ Features
 - Primitives: sphere, plane, cylinder (with caps), cone
@@ -48,7 +50,7 @@ pl  0,-25,0     0,1,0        255,255,0    0 0.4 0 0 0
 cy  5,-30,30    -0.8,1,0.5   5  100       255,0,0 0 0 0 0 1   # diameter, height
 co  10,0,0      0,1,0.5      8  6         255,0,0 0 0.5 0 0 0
 ```
-Ready-made scenes live in `scenes/` (`*Basic.rt`, `*Bonus.rt`, `MegaMirror.rt`, `pretty.rt`, `invalid.rt`).
+Ready-made scenes live in `scenes/` (`*Basic.rt`, `*Bonus.rt`, `MegaMirror.rt`, `pretty.rt`, `invalid.rt`, and the showcase scenes `planets.rt`, `mirror_hall.rt`, `sunset_temple.rt`, `rgb_shadows.rt`).
 
 ## ▸ Structure
 ```text
