@@ -2,11 +2,29 @@ CFILES	:= src/*.c src/*/*.c
 RM		:= rm -f
 NAME	:= miniRT
 CC		:= gcc
-INCDIR	:= -I ./include -I mlx -I libft
+UNAME	:= $(shell uname -s)
+
+# macOS: bundled mlx/ (OpenGL/AppKit) · Linux: bundled mlx_linux/ (X11)
+ifeq ($(UNAME),Linux)
+MLXDIR	:= mlx_linux
+MLXLINK	:= -L $(MLXDIR) -lmlx -lXext -lX11 -lm -lpthread
+PLATFORM	:= -D LINUX=1 -std=gnu17
+# build only the library (./configure would also build mlx's test program, which needs libbsd)
+MLXBUILD	:= cd $(MLXDIR) && { echo "INC=/usr/include"; grep -v %%%% Makefile.mk; } > Makefile.gen && $(MAKE) -f Makefile.gen all
+MLXCLEAN	:= rm -f $(MLXDIR)/*.o $(MLXDIR)/libmlx*.a $(MLXDIR)/Makefile.gen
+else
+MLXDIR	:= mlx
+MLXLINK	:= -L $(MLXDIR) -lmlx -framework OpenGL -framework Appkit
+PLATFORM	:= -D MACOS=1
+MLXBUILD	:= $(MAKE) -C $(MLXDIR)
+MLXCLEAN	:= $(MAKE) -C $(MLXDIR) clean
+endif
+
+INCDIR	:= -I ./include -I $(MLXDIR) -I libft
 
 LIB		:= libmlx.a
 LIBFT	:= libft.a
-LIBDIR	:= mlx/$(LIB)
+LIBDIR	:= $(MLXDIR)/$(LIB)
 LIBFTDIR	:= libft
 LIBFTPATH	:= $(LIBFTDIR)/$(LIBFT)
 CFLAGS	:= -Wall -Wextra -Werror $(INCDIR) #-fsanitize=address 
@@ -21,23 +39,19 @@ NC = \033[0m
 all: $(NAME)
 
 $(NAME): $(CFILES) $(LIBDIR) $(LIBFTPATH)
-	@$(CC) $(CFLAGS) $(CFILES) -o $(NAME) -L mlx -lmlx -L $(LIBFTDIR) -lft -framework OpenGL -framework Appkit -D MACOS=1
-	@clear
+	@$(CC) $(CFLAGS) $(PLATFORM) $(CFILES) -o $(NAME) -L $(LIBFTDIR) -lft $(MLXLINK)
 	@echo -e "$(BLUE)$(BOLD)[ ok ] $(NAME): created$(NC)"
 
-linux: $(CFILES) $(LIBFTPATH)
-	@$(CC) $(CFLAGS) $(CFILES) -o $(NAME) -L mlx -lmlx -L $(LIBFTDIR) -lft -lXext -lX11 -lm -D LINUX=1
-	@clear
-	@echo -e "$(BLUE)$(BOLD)[ ok ] $(NAME): created$(NC)"
+linux: all
 
 $(LIBDIR):
-	@make -C mlx
+	@$(MLXBUILD)
 
 $(LIBFTPATH):
 	@make -C $(LIBFTDIR)
 
 clean:
-	@make -C mlx clean
+	@$(MLXCLEAN)
 	@make -C $(LIBFTDIR) clean
 	@clear
 	@echo -e "$(VIOLET)$(BOLD)[ ok ] $^: mlx objs deleted$(NC)"
@@ -59,4 +73,4 @@ re: fclean all
 
 rerun: re run
 
-.PHONY: clean fclean all re run rerun
+.PHONY: clean fclean all linux re run rerun

@@ -29,11 +29,11 @@ The camera can be moved and rotated live; each move re-launches the render.
 - Per-object texture mapping and bump mapping from `.xpm` images, or procedural checkerboard
 - Multithreaded rendering with `pthread` (12 threads on macOS, 50 on Linux build)
 - Strict scene parser: file extension, field count, colour range, non-zero vectors, single `A` / `C`
-- Interactive camera (macOS keymap): `W A S D` move, `Z` / `X` up / down, arrow keys rotate, `Esc` quits
+- Interactive camera (macOS and Linux): `W A S D` move, `Z` / `X` up / down, arrow keys rotate, `Esc` quits
 
 ## ▸ Usage
 ```bash
-make                                  # macOS: builds bundled mlx + libft, links OpenGL/AppKit
+make                                  # macOS: bundled mlx/ (OpenGL/AppKit) · Linux: bundled mlx_linux/ (X11)
 ./miniRT scenes/ComplexBonus.rt
 make run FILE=scenes/pretty.rt        # build and run in one step
 ```
@@ -69,7 +69,7 @@ scenes/  imgs/   sample scenes and XPM textures / bump maps
 Authorship above is taken from the 42 file headers; the Git history is a single import commit.
 
 ## ▸ Notes
-- The `mlx/` folder is the macOS MiniLibX. The `make linux` target expects a Linux MiniLibX in its place and uses a different key mapping.
+- `mlx/` is the macOS MiniLibX and `mlx_linux/` the Linux one ([42Paris/minilibx-linux](https://github.com/42Paris/minilibx-linux), BSD 2-Clause). On Linux, install the Xlib and Xext development packages (e.g. `libx11-dev libxext-dev`); `make linux` is kept as an alias of `make`.
 - The `spec` column is parsed and a specular term is computed, but it is not applied to the final colour.
 
 ---

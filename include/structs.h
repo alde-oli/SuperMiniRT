@@ -27,16 +27,16 @@
 
 # ifdef LINUX
 #  define NUM_THREADS 50
-#  define LJ_UP 111
-#  define LJ_DOWN 112
-#  define LJ_LEFT 232
-#  define LJ_RIGHT 65111
-#  define RJ_UP 65293
-#  define RJ_DOWN 65507
-#  define RJ_LEFT 97
-#  define RJ_RIGHT 115
-#  define LS 100
-#  define RS 102
+#  define LJ_UP 119
+#  define LJ_DOWN 115
+#  define LJ_LEFT 97
+#  define LJ_RIGHT 100
+#  define RJ_UP 65362
+#  define RJ_DOWN 65364
+#  define RJ_LEFT 65361
+#  define RJ_RIGHT 65363
+#  define LS 122
+#  define RS 120
 #  define K_LEFT 65361
 #  define K_RIGHT 65363
 #  define K_DOWN 65364
