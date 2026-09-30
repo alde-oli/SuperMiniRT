@@ -9,6 +9,17 @@ This version goes past the mandatory part: rays are distributed across worker th
 surfaces can be reflective with recursive bounces, and each object can carry an XPM texture, an XPM bump map or a checkerboard pattern.
 The camera can be moved and rotated live; each move re-launches the render.
 
+## ▸ Renders
+<p align="center">
+  <img src=".github/renders/MegaMirror.jpg" width="100%" alt="MegaMirror.rt — facing mirror planes reflecting spheres and checkered cylinders recursively">
+</p>
+<p align="center">
+  <img src=".github/renders/SphereBonus.jpg" width="49%" alt="SphereBonus.rt — bump-mapped yellow sphere, textured sphere, checkerboard sphere">
+  <img src=".github/renders/ComplexBonus.jpg" width="49%" alt="ComplexBonus.rt — textured, bump-mapped and reflective planes, spheres, cylinder and cone under three coloured lights">
+</p>
+
+<sub>`MegaMirror.rt`, `SphereBonus.rt` and `ComplexBonus.rt` at 1280×720, rendered by this code (Linux build linked against a headless MiniLibX stand-in that dumps the frame). One texture was swapped for another image from `imgs/`.</sub>
+
 ## ▸ Features
 - Primitives: sphere, plane, cylinder (with caps), cone
 - Ambient light plus any number of coloured point lights, with hard shadows
@@ -50,8 +61,8 @@ scenes/  imgs/   sample scenes and XPM textures / bump maps
 ```
 
 ## ▸ Squad
-- **dvandenb** — rendering core: intersections, lighting, reflections, threading, key events, vector and colour maths
-- **alde-oli** (Alexandre) — scene parser and validation (`src/parsing/`, both files created by him, `get_objs.c` later edited by dvandenb), plus edits to the shared structures (`structs.h`) and list helpers
+- **David** ([DavePie](https://github.com/DavePie), 42 login `dvandenb`) — rendering core: intersections, lighting, reflections, threading, key events, vector and colour maths
+- **alde-oli** (Alexandre) — scene parser and validation (`src/parsing/`, both files created by him, `get_objs.c` later edited by David), plus edits to the shared structures (`structs.h`) and list helpers
 
 Authorship above is taken from the 42 file headers; the Git history is a single import commit.
 
